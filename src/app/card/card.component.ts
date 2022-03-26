@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
         this.title = 'Title has been changed!'
     }
 
-
+    //Добавляем поле из card.component(строчка 11 ) создаем инпут и передаем в него какой-то event, а также вписываем в поле title наш value 
     inputHandler(event: any){
         const value = event.target.value;
         this.title = value

@@ -7,7 +7,10 @@
     <button (click)="title = 'Inline title'">Channge title inline </button>
   </div>
 
-  <div>
+  <!-- <div>
     <input type="text" (input)="inputHandler($event)" [value]="title">
+  </div> -->
+  <div>
+    <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()" >
   </div>
 </div>

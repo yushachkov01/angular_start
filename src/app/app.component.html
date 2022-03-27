@@ -7,8 +7,9 @@
 <!-- Звездочка нужна для того, чтобы показать, о текущая директива меняет HTML документ -->
   <div *ngIf="toogle; else noCards">
   <app-card
-  *ngFor="let iterCard of cards"
+  *ngFor="let iterCard of cards; let idx = index"
   [card]="iterCard"
+  [index]="idx + 1"
   ></app-card>
   </div>
   <ng-template #noCards>

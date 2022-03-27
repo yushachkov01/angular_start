@@ -4,12 +4,12 @@
   <hr>
   <button (click)="toogleCards()">Toggle cards</button>
   <hr>
-
-  <!-- <app-form></app-form> -->
-  <div *ngIf="toogle; else noCards!">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+<!-- Звездочка нужна для того, чтобы показать, о текущая директива меняет HTML документ -->
+  <div *ngIf="toogle; else noCards">
+  <app-card
+  *ngFor="let iterCard of cards"
+  [card]="iterCard"
+  ></app-card>
   </div>
   <ng-template #noCards>
     <p>Cards are hidden!</p>

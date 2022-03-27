@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'; //Импортирую что-то из angular/core'
+import { Component, Input, OnInit } from '@angular/core'; //Импортирую что-то из angular/core'
+import { Card } from '../app.component';
 
 @Component({
     selector: 'app-card',//создаем selector с app, чтобы мы могли различать где наши компоненты, а где чужие, спросить что такое селектор
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core'; //Импортирую что
     styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+
+    @Input() card: Card;
+
     title = 'My card Title'
     text: string = 'My sample text'
 
@@ -16,7 +20,7 @@ export class CardComponent implements OnInit {
     ngOnInit() { }
 
     changeTitle() {
-        this.title = 'Title has been changed!'
+        this.card.title = 'Title has been changed!'
     }
 
     //Добавляем поле из card.component(строчка 11 ) создаем инпут и передаем в него какой-то event, а также вписываем в поле title наш value 

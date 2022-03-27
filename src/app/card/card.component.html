@@ -1,16 +1,22 @@
 <div class="card">
   <!-- C помощью  FormsModule устанавливаем цвет текста синим, если длина title будет больше 5 символов в противном случае красный, также регулируем ширину шрифта-->
   <h2 [ngStyle]="{ 
-    color: title.length < 5 ? 'blue' : 'red',
-    fontWeight: title.length < 7 ? 'normal' : 'bold'
+    color: card.title.length < 5 ? 'blue' : 'red',
+    fontWeight: card.title.length < 7 ? 'normal' : 'bold'
 
-  }">{{title}}</h2>
+  }">{{card.title}}</h2>
   
   <!-- <p class="text" [ngClass]="{
     blue: textColor === 'blue',
     green: textColor === 'green',
     red: textColor ===   'red'
 }">{{text}}</p> -->
+
+  <p class="text" [ngClass]="{
+    blue: textColor === 'blue',
+    green: textColor === 'green',
+    red: textColor ===   'red'
+}">{{card.text}}</p>
 
   <div class="buttons">
     <button (click)="textColor = 'blue'">Set blue</button>
@@ -21,13 +27,13 @@
 
   <div class="buttons">
     <button (click)="changeTitle()">Chancge Title</button>
-    <button (click)="title = 'Inline title'">Channge title inline </button>
+    <button (click)="card.title = 'Inline title'">Channge title inline </button>
   </div>
 
   <!-- <div>
     <input type="text" (input)="inputHandler($event)" [value]="title">
   </div> -->
   <div>
-    <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()" >
+    <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()" >
   </div>
 </div>

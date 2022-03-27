@@ -14,6 +14,8 @@ export class CardComponent implements OnInit {
     title = 'My card Title'
     text: string = 'My sample text'
 
+    cardDate: Date = new Date()
+
     disabled = false;
 
     textColor: string | undefined

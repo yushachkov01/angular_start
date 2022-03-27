@@ -25,11 +25,15 @@
 
   </div>
 
+  
   <div class="buttons">
     <button (click)="changeTitle()">Chancge Title</button>
     <button (click)="card.title = 'Inline title'">Channge title inline </button>
   </div>
-
+  
+  <div>
+    <strong>{{cardDate | date:'dd.LL.YYY HH:mm:ss'}}</strong>
+  </div>
   <!-- <div>
     <input type="text" (input)="inputHandler($event)" [value]="title">
   </div> -->

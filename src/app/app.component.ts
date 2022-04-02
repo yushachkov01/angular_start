@@ -22,5 +22,6 @@ export class AppComponent {
 
   toogleCards(){
     this.toogle = !this.toogle
+    
   }
 }

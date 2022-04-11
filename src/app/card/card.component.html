@@ -1,0 +1,18 @@
+<section class="card">
+  <div class="card__container">
+    <div class="card__info" >
+      <div class="card__info-block">
+        <span class="card__info-block-name">{{ name }}</span>
+        <span class="card__info-block-number">{{ number }}</span>
+      </div>
+      <img class="card__info-logo" *ngIf="isVisa; else isMastercard" src="../../assets/visa-icon.svg" alt="Visa Logo"/>
+      <ng-template #isMastercard>
+        <img class="card__info-logo" src="../../assets/mastercard-icon.svg" alt="Mastercard Logo"/>
+      </ng-template>
+    </div>
+    <div class="card__data">
+      <span class="card__data-balance">{{ amount }}</span>
+      <span class="card__data-term">{{ expirationDate }}</span>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT, SET_INTERVAL } from './tokens';
+import { Injectable, Inject } from '@angular/core';
 
 @Injectable()
 export class TimerService {
@@ -9,10 +9,9 @@ export class TimerService {
   ) {}
 
   public start() {
-    const timerOutputElement = document.querySelector('#timer-output');
+    const timerOutputElement = this.document.querySelector('#timer-output');
     let counter: number = 0;
-
-    setInterval(() => {
+    this.setInterval(() => {
       timerOutputElement.innerHTML = `${counter++}`;
     }, 1000);
   }
